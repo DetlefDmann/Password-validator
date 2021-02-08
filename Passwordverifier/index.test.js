@@ -45,3 +45,25 @@ describe("Checks for one or more numbers", ()=> {
         expect(checks.hasDigit("1bit")).toBe(true);
     })
 })
+
+describe("Check total function", ()=> {
+    test("Condition 4 not met results in fail", ()=> {
+        expect(checks.verifyPassword("HELLO4")).toBe(false);
+    })
+    test("Not enough conditions met results in fail", ()=> {
+        expect(checks.verifyPassword("hellohellow")).toBe(false);
+    })
+    test("Condition 4 and enough other conditions met results in pass", ()=> {
+        expect(checks.verifyPassword("hello4")).toBe(true);
+    })
+    test("Condition 4 and enough other conditions met results in pass", ()=> {
+        expect(checks.verifyPassword("hellohello4")).toBe(true);
+    })
+    test("Condition 4 and enough other conditions met results in pass", ()=> {
+        expect(checks.verifyPassword("hello")).toBe(true);
+    })
+    test("All conditions met results in pass", ()=> {
+        expect(checks.verifyPassword("Hello4")).toBe(true);
+    })
+    
+})
