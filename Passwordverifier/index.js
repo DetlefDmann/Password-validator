@@ -1,13 +1,22 @@
 // Utility functions
 const isNotNull = (str) => str !=null;
 
-const hasRightLength = (str) => str;
+const hasRightLength = (str) => str.length < 9;
 
-const hasUpperCaseCharacter = (str) => str;
+const hasUpperCaseCharacter = (str) => {
+    let reg = new RegExp(/[A-Z]/);
+    return reg.test(str);
+};
 
-const hasLowerCaseCharacter = (str) => str;
+const hasLowerCaseCharacter = (str) => {
+    let reg = new RegExp(/[a-z]/);
+    return reg.test(str);
+}
 
-const hasDigit = (str) => str;
+const hasDigit = (str) => {
+    let reg = new RegExp(/[0-9]/);
+    return reg.test(str);
+}
 
 const minimumConditionsReached = conditions => {
     // conditions is an array of booleans
